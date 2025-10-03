@@ -24,9 +24,4 @@
   "browserslist": [">0.2%", "not dead", "not ie <= 11", "not op_mini all"]
 }
 
-"homepage": "https://usocarruso25.github.io/Calculator",
-"scripts": {
-  "predeploy": "npm run build",
-  "deploy": "gh-pages -d build"
-}
 
