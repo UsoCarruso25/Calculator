@@ -1,0 +1,261 @@
+.App {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  background: linear-gradient(135deg, #8a2387, #e94057, #f27121);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 20px;
+}
+
+.return {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.calculadora {
+  background: #2c2c2c;
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  border: 8px solid #1a1a1a;
+  max-width: 320px;
+  width: 100%;
+  position: relative;
+}
+
+.calculadora::before {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  background: linear-gradient(
+    45deg,
+    #ff6b6b,
+    #4ecdc4,
+    #45b7d1,
+    #96ceb4,
+    #feca57
+  );
+  border-radius: 24px;
+  z-index: -1;
+  opacity: 0.7;
+}
+
+.display {
+  background: #0a0a0a;
+  color: #00ff41;
+  padding: 20px 15px;
+  border-radius: 10px;
+  margin-bottom: 25px;
+  font-family: "Digital-7", "Courier New", monospace;
+  border: 3px solid #333;
+  box-shadow: inset 0 0 10px rgba(0, 255, 65, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.display::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(transparent 50%, rgba(0, 255, 65, 0.03) 50%);
+  background-size: 100% 4px;
+  pointer-events: none;
+}
+
+.contador {
+  font-size: 2.2em;
+  font-weight: bold;
+  margin-bottom: 8px;
+  min-height: 40px;
+  text-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
+  letter-spacing: 2px;
+}
+
+.entrada {
+  font-size: 1.4em;
+  color: #66ff99;
+  min-height: 30px;
+  text-shadow: 0 0 5px rgba(102, 255, 153, 0.5);
+  letter-spacing: 1px;
+}
+
+.botones-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.boton {
+  background: linear-gradient(145deg, #4a4a4a, #3a3a3a);
+  color: #fff;
+  border: none;
+  padding: 18px 5px;
+  border-radius: 15px;
+  font-size: 1.3em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 0 #2a2a2a, inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  min-height: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.boton::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  transition: left 0.5s;
+}
+
+.boton:hover::before {
+  left: 100%;
+}
+
+.boton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 #2a2a2a, inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  background: linear-gradient(145deg, #5a5a5a, #4a4a4a);
+}
+
+.boton:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 #2a2a2a, inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.boton-numero {
+  background: linear-gradient(145deg, #5a5a5a, #4a4a4a);
+  color: #ffffff;
+}
+
+.boton-numero:hover {
+  background: linear-gradient(145deg, #6a6a6a, #5a5a5a);
+}
+
+.boton-operacion {
+  background: linear-gradient(145deg, #ff9500, #e68500);
+  color: #000;
+  box-shadow: 0 4px 0 #cc6a00, inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.boton-operacion:hover {
+  background: linear-gradient(145deg, #ffa533, #ff9500);
+  box-shadow: 0 6px 0 #cc6a00, inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.boton-operacion:active {
+  box-shadow: 0 2px 0 #cc6a00, inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.boton-limpiar {
+  background: linear-gradient(145deg, #a0a0a0, #909090);
+  color: #000;
+  box-shadow: 0 4px 0 #707070, inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.boton-limpiar:hover {
+  background: linear-gradient(145deg, #b0b0b0, #a0a0a0);
+  box-shadow: 0 6px 0 #707070, inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.boton-aumentar {
+  background: linear-gradient(145deg, #34c759, #2a9d46);
+  color: #000;
+  grid-column: span 2;
+  box-shadow: 0 4px 0 #1e7a34, inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.boton-aumentar:hover {
+  background: linear-gradient(145deg, #44d769, #34c759);
+  box-shadow: 0 6px 0 #1e7a34, inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.boton-cero {
+  grid-column: span 2;
+}
+
+.boton-reset {
+  background: linear-gradient(145deg, #ff3b30, #d6302a);
+  color: #fff;
+  grid-column: span 2;
+  box-shadow: 0 4px 0 #b02520, inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.boton-reset:hover {
+  background: linear-gradient(145deg, #ff4b40, #ff3b30);
+  box-shadow: 0 6px 0 #b02520, inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.marca {
+  color: #666;
+  font-size: 0.8em;
+  margin-top: 15px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+
+/* Efectos de brillo en los bordes */
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+  }
+}
+
+.calculadora {
+  animation: glow 3s ease-in-out infinite;
+}
+
+/* Responsive */
+@media (max-width: 400px) {
+  .calculadora {
+    padding: 20px;
+    margin: 10px;
+    max-width: 280px;
+  }
+
+  .boton {
+    padding: 15px 5px;
+    font-size: 1.1em;
+    min-height: 55px;
+  }
+
+  .contador {
+    font-size: 1.8em;
+  }
+
+  .entrada {
+    font-size: 1.1em;
+  }
+}
